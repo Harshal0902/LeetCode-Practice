@@ -1,0 +1,2 @@
+-- https://leetcode.com/problems/consecutive-numbers
+SELECT DISTINCT a.num AS ConsecutiveNums FROM logs a JOIN logs b ON a.id = b.id + 1 JOIN logs c ON b.id = c.id + 1 WHERE a.num = b.num AND b.num = c.num;
