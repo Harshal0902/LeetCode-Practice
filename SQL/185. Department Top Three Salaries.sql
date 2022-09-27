@@ -1,0 +1,2 @@
+-- https://leetcode.com/problems/department-top-three-salaries
+Select tab.Department, tab.Employee, tab.Salary FROM (SELECT D.name As Department,E.name AS Employee, Salary, dense_rank() over(partition by departmentId ORDER BY salary Desc) As m_rank FROM Employee E join Department D ON departmentId=D.id) As tab WHERE tab.m_rank < 4;
